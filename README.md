@@ -8,27 +8,27 @@ This repository contains the code for my MSc Computer Science dissertation proje
 
 ### Tutorial screen
 
-![screenshot1](https://github.com/albertjk/Recommending-Healthy-Dishes-When-Eating-Out/blob/master/Images/screenshot1.png "App Screenshot 1")
+<img src="https://github.com/albertjk/Recommending-Healthy-Dishes-When-Eating-Out/blob/master/Images/screenshot1.png" height="510">
 
 ### Selecting dish recommendation preferences
 
-![screenshot2](https://github.com/albertjk/Image-video-Auto-captioning-Using-Deep-Learning/blob/master/Images/screenshot2.png "App Screenshot 2")
+<img src="https://github.com/albertjk/Recommending-Healthy-Dishes-When-Eating-Out/blob/master/Images/screenshot2.png" height="510">
 
 ### Adding dishes to be considered for recommendation
 
-![screenshot3](https://github.com/albertjk/Image-video-Auto-captioning-Using-Deep-Learning/blob/master/Images/screenshot3.png "App Screenshot 3")
+<img src="https://github.com/albertjk/Recommending-Healthy-Dishes-When-Eating-Out/blob/master/Images/screenshot3.png" height="510">
 
 ### Dish recommendations and nutrient bar chart of a dish
 
-![screenshot4](https://github.com/albertjk/Image-video-Auto-captioning-Using-Deep-Learning/blob/master/Images/screenshot4.png "App Screenshot 4")
+<img src="https://github.com/albertjk/Recommending-Healthy-Dishes-When-Eating-Out/blob/master/Images/screenshot4.png" height="510">
 
 ### Diary screen and nutrient intake charts
 
-![screenshot5](https://github.com/albertjk/Image-video-Auto-captioning-Using-Deep-Learning/blob/master/Images/screenshot5.png "App Screenshot 5")
+<img src="https://github.com/albertjk/Recommending-Healthy-Dishes-When-Eating-Out/blob/master/Images/screenshot5.png" height="510">
 
 ### Favourites screen
 
-![screenshot6](https://github.com/albertjk/Image-video-Auto-captioning-Using-Deep-Learning/blob/master/Images/screenshot6.png "App Screenshot 6")
+<img src="https://github.com/albertjk/Recommending-Healthy-Dishes-When-Eating-Out/blob/master/Images/screenshot6.png" height="510">
 
 ## Built With
 
