@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/dishNameTextView"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/row_dishNameTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/showBarChartButton"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/showBarChartButton"
+                android:layout_width="40dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:background="@color/design_default_color_background"
+                android:paddingStart="5dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:paddingEnd="10dp"
+                android:src="@drawable/ic_bar_chart_red_32dp"
+                android:tooltipText="Show a bar chart of the nutrient daily reference intake values"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/rankingTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/row_rankingTitleTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dishNameTextView" />
+
+            <TextView
+                android:id="@+id/rankingTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/row_rankingTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                app:layout_constraintStart_toEndOf="@+id/rankingTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/dishNameTextView" />
+
+            <TextView
+                android:id="@+id/healthinessScoreTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/row_healthinessScoreTitleTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/rankingTextView"
+                app:layout_constraintTop_toBottomOf="@+id/dishNameTextView" />
+
+            <TextView
+                android:id="@+id/healthinessScoreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/row_healthinessScoreTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/healthinessScoreTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/dishNameTextView" />
+
+            <TextView
+                android:id="@+id/caloriesTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/row_caloriesTitleTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rankingTitleTextView" />
+
+            <TextView
+                android:id="@+id/caloriesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/row_caloriesTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                app:layout_constraintStart_toEndOf="@+id/caloriesTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/rankingTitleTextView" />
+
+            <TextView
+                android:id="@+id/totalFatTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/row_totalFatTitleTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/caloriesTextView"
+                app:layout_constraintTop_toBottomOf="@+id/rankingTitleTextView" />
+
+            <TextView
+                android:id="@+id/totalFatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/row_totalFatTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                app:layout_constraintStart_toEndOf="@+id/totalFatTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/rankingTitleTextView" />
+
+            <TextView
+                android:id="@+id/saturatedFatTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/row_saturatedFatTitleTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/caloriesTitleTextView" />
+
+            <TextView
+                android:id="@+id/saturatedFatTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/row_saturatedFatTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                app:layout_constraintStart_toEndOf="@+id/saturatedFatTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/caloriesTitleTextView" />
+
+            <TextView
+                android:id="@+id/carbsTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/row_carbsTitleTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/saturatedFatTextView"
+                app:layout_constraintTop_toBottomOf="@+id/caloriesTitleTextView" />
+
+            <TextView
+                android:id="@+id/carbsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/row_carbsTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                app:layout_constraintStart_toEndOf="@+id/carbsTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/caloriesTitleTextView" />
+
+            <TextView
+                android:id="@+id/sugarsTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/row_sugarsTitleTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/carbsTitleTextView" />
+
+            <TextView
+                android:id="@+id/sugarsTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/row_sugarsTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                app:layout_constraintStart_toEndOf="@+id/sugarsTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/carbsTitleTextView" />
+
+            <TextView
+                android:id="@+id/saltTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/row_saltTitleTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/sugarsTextView"
+                app:layout_constraintTop_toBottomOf="@+id/carbsTitleTextView" />
+
+            <TextView
+                android:id="@+id/saltTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/row_saltTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                app:layout_constraintStart_toEndOf="@+id/saltTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/carbsTitleTextView" />
+
+            <TextView
+                android:id="@+id/fibreTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/row_fibreTitleTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/saltTextView"
+                app:layout_constraintTop_toBottomOf="@+id/carbsTitleTextView" />
+
+            <TextView
+                android:id="@+id/fibreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/row_fibreTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                app:layout_constraintStart_toEndOf="@+id/fibreTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/carbsTitleTextView" />
+
+            <TextView
+                android:id="@+id/proteinTitleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/row_proteinTitleTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sugarsTitleTextView" />
+
+            <TextView
+                android:id="@+id/proteinTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/row_proteinTextView_text"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/proteinTitleTextView"
+                app:layout_constraintTop_toBottomOf="@+id/sugarsTitleTextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

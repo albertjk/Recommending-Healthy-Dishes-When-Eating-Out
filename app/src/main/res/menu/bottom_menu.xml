@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- The menu items have the same IDs as the corresponding top-level destination fragments.  -->
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="@string/homeMenuName" />
+    <item
+        android:id="@+id/preferencesFragment"
+        android:icon="@drawable/ic_preferences"
+        android:title="@string/preferencesMenuName" />
+    <item
+        android:id="@+id/diaryFragment"
+        android:icon="@drawable/ic_diary_24dp"
+        android:title="@string/diaryMenuName" />
+    <item
+        android:id="@+id/favouritesFragment"
+        android:icon="@drawable/ic_favourites_24dp"
+        android:title="@string/favouritesMenuName" />
+</menu>

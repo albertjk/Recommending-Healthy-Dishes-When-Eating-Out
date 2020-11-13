@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView android:id="@+id/preferencesScreenTitle"
+            style="@style/Base.Widget.MaterialComponents.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:layout_marginBottom="64dp"
+            android:gravity="center"
+            android:text="@string/fragment_preferences_screenTitle_text"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintBottom_toTopOf="@+id/generallyHealthyCheckBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.47" />
+
+        <TextView
+            android:id="@+id/prioritiesTextView"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/fragment_preferences_prioritiesTextView_text"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/generallyHealthyCheckBox"
+            app:layout_constraintEnd_toStartOf="@+id/generallyHealthyCheckBox"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/preferencesScreenTitle" />
+
+        <Spinner
+            android:id="@+id/generallyHealthySpinner"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="32dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/lowCalorieCheckBox"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/generallyHealthyCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:buttonTint="@color/colorPrimary"
+            android:layout_marginStart="14dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/recommendationPreference1"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            app:layout_constraintBottom_toTopOf="@+id/lowCalorieCheckBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.597"
+            app:layout_constraintStart_toEndOf="@+id/generallyHealthySpinner"
+            app:layout_goneMarginLeft="110dp"
+            app:layout_goneMarginStart="110dp" />
+
+        <Spinner
+            android:id="@+id/lowCalorieSpinner"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="32dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/lowCarbCheckBox"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/generallyHealthyCheckBox"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/lowCalorieCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:buttonTint="@color/colorPrimary"
+            android:layout_marginStart="14dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/recommendationPreference2"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            app:layout_constraintBottom_toTopOf="@+id/lowCarbCheckBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.171"
+            app:layout_constraintStart_toEndOf="@+id/lowCalorieSpinner"
+            app:layout_goneMarginLeft="110dp"
+            app:layout_goneMarginStart="110dp" />
+
+        <Spinner
+            android:id="@+id/lowCarbSpinner"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="32dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/highProteinCheckBox"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lowCalorieCheckBox"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/lowCarbCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:buttonTint="@color/colorPrimary"
+            android:layout_marginStart="14dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/recommendationPreference3"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            app:layout_constraintBottom_toTopOf="@+id/highProteinCheckBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.245"
+            app:layout_constraintStart_toEndOf="@+id/lowCarbSpinner"
+            app:layout_goneMarginLeft="110dp"
+            app:layout_goneMarginStart="110dp" />
+
+        <Spinner
+            android:id="@+id/highProteinSpinner"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="64dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lowCarbCheckBox" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/highProteinCheckBox"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:buttonTint="@color/colorPrimary"
+            android:layout_marginStart="14dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/recommendationPreference4"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            app:layout_constraintBottom_toTopOf="@+id/savePreferencesButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.189"
+            app:layout_constraintStart_toEndOf="@+id/highProteinSpinner"
+            app:layout_goneMarginLeft="110dp"
+            app:layout_goneMarginStart="110dp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/savePreferencesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="64dp"
+            android:text="@string/fragment_preferences_startRecognisingDishesButton_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

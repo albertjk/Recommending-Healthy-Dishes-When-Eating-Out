@@ -1,0 +1,459 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "810726ccb1c4ed3143eed78d2f999621",
+    "entities": [
+      {
+        "tableName": "Dish",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`dishId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `dishName` TEXT NOT NULL, `calories` INTEGER NOT NULL, `totalFat` REAL NOT NULL, `saturatedFat` REAL NOT NULL, `carbohydrates` REAL NOT NULL, `sugars` REAL NOT NULL, `salt` REAL NOT NULL, `fibre` REAL NOT NULL, `protein` REAL NOT NULL, `isFavourite` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "dishId",
+            "columnName": "dishId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dishName",
+            "columnName": "dishName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "calories",
+            "columnName": "calories",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalFat",
+            "columnName": "totalFat",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "saturatedFat",
+            "columnName": "saturatedFat",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "carbohydrates",
+            "columnName": "carbohydrates",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sugars",
+            "columnName": "sugars",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "salt",
+            "columnName": "salt",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fibre",
+            "columnName": "fibre",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "protein",
+            "columnName": "protein",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isFavourite",
+            "columnName": "isFavourite",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "dishId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "DishLog",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`logId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `dishId` INTEGER NOT NULL, `mealName` TEXT NOT NULL, `logDate` INTEGER NOT NULL, FOREIGN KEY(`dishId`) REFERENCES `Dish`(`dishId`) ON UPDATE NO ACTION ON DELETE CASCADE , FOREIGN KEY(`logDate`) REFERENCES `DailyLog`(`logDate`) ON UPDATE NO ACTION ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "logId",
+            "columnName": "logId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dishId",
+            "columnName": "dishId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mealName",
+            "columnName": "mealName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "logDate",
+            "columnName": "logDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "logId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "Dish",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "dishId"
+            ],
+            "referencedColumns": [
+              "dishId"
+            ]
+          },
+          {
+            "table": "DailyLog",
+            "onDelete": "CASCADE",
+            "onUpdate": "NO ACTION",
+            "columns": [
+              "logDate"
+            ],
+            "referencedColumns": [
+              "logDate"
+            ]
+          }
+        ]
+      },
+      {
+        "tableName": "DailyLog",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`logDate` INTEGER NOT NULL, `dailyCaloriesIntake` INTEGER NOT NULL, `dailyTotalFatIntake` REAL NOT NULL, `dailySaturatedFatIntake` REAL NOT NULL, `dailyCarbohydratesIntake` REAL NOT NULL, `dailySugarsIntake` REAL NOT NULL, `dailySaltIntake` REAL NOT NULL, `dailyFibreIntake` REAL NOT NULL, `dailyProteinIntake` REAL NOT NULL, PRIMARY KEY(`logDate`))",
+        "fields": [
+          {
+            "fieldPath": "logDate",
+            "columnName": "logDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dailyCaloriesIntake",
+            "columnName": "dailyCaloriesIntake",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dailyTotalFatIntake",
+            "columnName": "dailyTotalFatIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dailySaturatedFatIntake",
+            "columnName": "dailySaturatedFatIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dailyCarbohydratesIntake",
+            "columnName": "dailyCarbohydratesIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dailySugarsIntake",
+            "columnName": "dailySugarsIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dailySaltIntake",
+            "columnName": "dailySaltIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dailyFibreIntake",
+            "columnName": "dailyFibreIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dailyProteinIntake",
+            "columnName": "dailyProteinIntake",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "logDate"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "SavedRecommendationPreference",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`preferenceId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `preferenceName` TEXT NOT NULL, `selectedPriority` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "preferenceId",
+            "columnName": "preferenceId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preferenceName",
+            "columnName": "preferenceName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "selectedPriority",
+            "columnName": "selectedPriority",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "preferenceId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "BreakfastLog",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`logDate` INTEGER NOT NULL, `breakfastCaloriesIntake` INTEGER NOT NULL, `breakfastTotalFatIntake` REAL NOT NULL, `breakfastSaturatedFatIntake` REAL NOT NULL, `breakfastCarbohydratesIntake` REAL NOT NULL, `breakfastSugarsIntake` REAL NOT NULL, `breakfastSaltIntake` REAL NOT NULL, `breakfastFibreIntake` REAL NOT NULL, `breakfastProteinIntake` REAL NOT NULL, PRIMARY KEY(`logDate`))",
+        "fields": [
+          {
+            "fieldPath": "logDate",
+            "columnName": "logDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "breakfastCaloriesIntake",
+            "columnName": "breakfastCaloriesIntake",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "breakfastTotalFatIntake",
+            "columnName": "breakfastTotalFatIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "breakfastSaturatedFatIntake",
+            "columnName": "breakfastSaturatedFatIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "breakfastCarbohydratesIntake",
+            "columnName": "breakfastCarbohydratesIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "breakfastSugarsIntake",
+            "columnName": "breakfastSugarsIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "breakfastSaltIntake",
+            "columnName": "breakfastSaltIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "breakfastFibreIntake",
+            "columnName": "breakfastFibreIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "breakfastProteinIntake",
+            "columnName": "breakfastProteinIntake",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "logDate"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "LunchLog",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`logDate` INTEGER NOT NULL, `lunchCaloriesIntake` INTEGER NOT NULL, `lunchTotalFatIntake` REAL NOT NULL, `lunchSaturatedFatIntake` REAL NOT NULL, `lunchCarbohydratesIntake` REAL NOT NULL, `lunchSugarsIntake` REAL NOT NULL, `lunchSaltIntake` REAL NOT NULL, `lunchFibreIntake` REAL NOT NULL, `lunchProteinIntake` REAL NOT NULL, PRIMARY KEY(`logDate`))",
+        "fields": [
+          {
+            "fieldPath": "logDate",
+            "columnName": "logDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lunchCaloriesIntake",
+            "columnName": "lunchCaloriesIntake",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lunchTotalFatIntake",
+            "columnName": "lunchTotalFatIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lunchSaturatedFatIntake",
+            "columnName": "lunchSaturatedFatIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lunchCarbohydratesIntake",
+            "columnName": "lunchCarbohydratesIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lunchSugarsIntake",
+            "columnName": "lunchSugarsIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lunchSaltIntake",
+            "columnName": "lunchSaltIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lunchFibreIntake",
+            "columnName": "lunchFibreIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lunchProteinIntake",
+            "columnName": "lunchProteinIntake",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "logDate"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "DinnerLog",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`logDate` INTEGER NOT NULL, `dinnerCaloriesIntake` INTEGER NOT NULL, `dinnerTotalFatIntake` REAL NOT NULL, `dinnerSaturatedFatIntake` REAL NOT NULL, `dinnerCarbohydratesIntake` REAL NOT NULL, `dinnerSugarsIntake` REAL NOT NULL, `dinnerSaltIntake` REAL NOT NULL, `dinnerFibreIntake` REAL NOT NULL, `dinnerProteinIntake` REAL NOT NULL, PRIMARY KEY(`logDate`))",
+        "fields": [
+          {
+            "fieldPath": "logDate",
+            "columnName": "logDate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dinnerCaloriesIntake",
+            "columnName": "dinnerCaloriesIntake",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dinnerTotalFatIntake",
+            "columnName": "dinnerTotalFatIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dinnerSaturatedFatIntake",
+            "columnName": "dinnerSaturatedFatIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dinnerCarbohydratesIntake",
+            "columnName": "dinnerCarbohydratesIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dinnerSugarsIntake",
+            "columnName": "dinnerSugarsIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dinnerSaltIntake",
+            "columnName": "dinnerSaltIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dinnerFibreIntake",
+            "columnName": "dinnerFibreIntake",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dinnerProteinIntake",
+            "columnName": "dinnerProteinIntake",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "logDate"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '810726ccb1c4ed3143eed78d2f999621')"
+    ]
+  }
+}

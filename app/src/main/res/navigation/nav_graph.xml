@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navg_graph"
+    app:startDestination="@id/mainFragment">
+
+    <!-- In action with id action_mainFragment_to_homeFragment, after navigating to home fragment,
+     pop the main fragment off of the back stack,
+     so that the user cannot navigate back to the splash screen. -->
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.albertjk.dishrecommender.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@+id/mainFragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.albertjk.dishrecommender.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_tutorialFragment"
+            app:destination="@id/tutorialFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_preferencesFragment"
+            app:destination="@id/preferencesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_homeFragment_to_initiateScanningDishNamesFragment"
+            app:destination="@id/initiateScanningDishNamesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/tutorialFragment"
+        android:name="com.albertjk.dishrecommender.TutorialFragment"
+        android:label="TutorialFragment"
+        tools:layout="@layout/fragment_tutorial">
+
+        <action
+            android:id="@+id/action_tutorialFragment_to_initiateScanningDishNamesFragment"
+            app:destination="@id/initiateScanningDishNamesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_tutorialFragment_to_preferencesFragment"
+            app:destination="@id/preferencesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/preferencesFragment"
+        android:name="com.albertjk.dishrecommender.PreferencesFragment"
+        android:label="preferencesFragment"
+        tools:layout="@layout/fragment_preferences">
+
+        <argument
+            android:name="noSavedPreferencesYet"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <action android:id="@+id/action_preferencesFragment_to_initiateScanningDishNamesFragment"
+            app:destination="@id/initiateScanningDishNamesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/ourRecommendationsFragment"
+        android:name="com.albertjk.dishrecommender.OurRecommendationsFragment"
+        android:label="OurRecommendationsFragment"
+        tools:layout="@layout/fragment_our_recommendations">
+
+        <argument
+            android:name="identifiedDishes"
+            android:defaultValue="@null"
+            app:argType="java.util.ArrayList" />
+
+        <action
+            android:id="@+id/action_ourRecommendationsFragment_to_recommendationNutritionBarChartFragment"
+            app:destination="@id/recommendationNutritionBarChartFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_ourRecommendationsFragment_to_initiateScanningDishNamesFragment"
+            app:destination="@id/initiateScanningDishNamesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/initiateScanningDishNamesFragment"
+        android:name="com.albertjk.dishrecommender.InitiateScanningDishNamesFragment"
+        android:label="InitiateScanningDishNamesFragment"
+        tools:layout="@layout/fragment_initiate_scanning_dish_names">
+
+        <argument
+            android:name="identifiedDishNames"
+            android:defaultValue="@null"
+            app:argType="java.util.ArrayList" />
+
+        <action
+            android:id="@+id/action_initiateScanningDishNamesFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+
+            />
+        <action
+            android:id="@+id/action_initiateScanningDishNamesFragment_to_generatingRecommendationsFragment"
+            app:destination="@id/generatingRecommendationsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_initiateScanningDishNamesFragment_self"
+            app:destination="@id/initiateScanningDishNamesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.albertjk.dishrecommender.CameraFragment"
+        android:label="CameraFragment"
+        tools:layout="@layout/fragment_camera">
+
+        <argument
+            android:name="identifiedDishNames"
+            android:defaultValue="@null"
+            app:argType="java.util.ArrayList" />
+
+        <argument
+            android:name="isBeingAddedAsFavourite"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="isBeingAddedToDiary"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="meal"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="logDate"
+            android:defaultValue="@null"
+            app:argType="java.util.Date" />
+
+        <action
+            android:id="@+id/action_cameraFragment_to_cropImageFragment"
+            app:destination="@id/cropImageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cropImageFragment"
+        android:name="com.albertjk.dishrecommender.CropImageFragment"
+        android:label="CropImageFragment"
+        tools:layout="@layout/fragment_crop_image">
+
+        <argument
+            android:name="savedUri"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="identifiedDishNames"
+            android:defaultValue="@null"
+            app:argType="java.util.ArrayList" />
+
+        <argument
+            android:name="isBeingAddedAsFavourite"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="isBeingAddedToDiary"
+            android:defaultValue="false"
+            app:argType="boolean" />
+
+        <argument
+            android:name="mealName"
+            android:defaultValue=""
+            app:argType="string" />
+
+        <argument
+            android:name="logDate"
+            android:defaultValue="@null"
+            app:argType="java.util.Date" />
+
+        <action
+            android:id="@+id/action_cropImageFragment_to_initiateScanningDishNamesFragment"
+            app:destination="@id/initiateScanningDishNamesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_cropImageFragment_to_favouritesFragment"
+            app:destination="@id/favouritesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_cropImageFragment_to_diaryFragment"
+            app:destination="@id/diaryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/generatingRecommendationsFragment"
+        android:name="com.albertjk.dishrecommender.GeneratingRecommendationsFragment"
+        android:label="GeneratingRecommendationsFragment"
+        tools:layout="@layout/fragment_generating_recommendations">
+
+        <argument
+            android:name="identifiedDishNames"
+            android:defaultValue="@null"
+            app:argType="java.util.ArrayList" />
+        <action
+            android:id="@+id/action_generatingRecommendationsFragment_to_ourRecommendationsFragment"
+            app:destination="@id/ourRecommendationsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/recommendationNutritionBarChartFragment"
+        android:name="com.albertjk.dishrecommender.RecommendationNutritionBarChartFragment"
+        android:label="RecommendationNutritionBarChartFragment"
+        tools:layout="@layout/fragment_recommendation_nutrition_bar_chart">
+
+        <argument
+            android:name="dishNutrients"
+            app:argType="com.albertjk.dishrecommender.Dish" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/diaryFragment"
+        android:name="com.albertjk.dishrecommender.DiaryFragment"
+        android:label="fragment_diary"
+        tools:layout="@layout/fragment_diary">
+
+        <argument
+            android:name="selectedDateString"
+            android:defaultValue="@null"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_diaryFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_diaryFragment_to_favouritesFragment"
+            app:destination="@id/favouritesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_diaryFragment_to_dailyNutritionPieChartFragment"
+            app:destination="@id/dailyNutritionPieChartFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_diaryFragment_to_weeklyNutritionLineChartFragment"
+            app:destination="@id/weeklyNutritionLineChartFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="com.albertjk.dishrecommender.FavouritesFragment"
+        android:label="fragment_favourites"
+        tools:layout="@layout/fragment_favourites">
+        <action
+            android:id="@+id/action_favouritesFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_favouritesFragment_to_diaryFragment"
+            app:destination="@id/diaryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/dailyNutritionPieChartFragment"
+        android:name="com.albertjk.dishrecommender.DailyNutritionPieChartFragment"
+        android:label="DailyNutritionPieChartFragment"
+        tools:layout="@layout/fragment_daily_nutrition_pie_chart">
+
+        <argument
+            android:name="selectedDateString"
+            android:defaultValue="@null"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/weeklyNutritionLineChartFragment"
+        android:name="com.albertjk.dishrecommender.WeeklyNutritionLineChartFragment"
+        android:label="WeeklyNutritionLineChartFragment"
+        tools:layout="@layout/fragment_weekly_nutrition_line_chart">
+
+        <argument
+            android:name="selectedDate"
+            android:defaultValue="@null"
+            app:argType="java.util.Calendar" />
+
+    </fragment>
+
+</navigation>

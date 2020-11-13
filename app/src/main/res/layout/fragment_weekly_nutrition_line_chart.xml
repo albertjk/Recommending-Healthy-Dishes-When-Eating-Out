@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WeeklyNutritionLineChartFragment">
+
+    <TextView
+        android:id="@+id/weeklyNutritionScreenTitle"
+        style="@style/TextAppearance.MaterialComponents.Headline6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:text="@string/fragment_weekly_nutrition_line_chart_weeklyNutritionScreenTitle_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/weeklyNutritionDateRange"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/fragment_weekly_nutrition_line_chart_weeklyNutritionDateRange_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weeklyNutritionScreenTitle" />
+
+    <LinearLayout
+        android:id="@+id/topRowButtons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintTop_toBottomOf="@id/weeklyNutritionDateRange"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <Button
+            android:id="@+id/caloriesLineChartButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_weekly_nutrition_line_chart_caloriesLineChartButton_text"
+            android:textSize="11sp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/totalFatLineChartButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_weekly_nutrition_line_chart_totalFatLineChartButton_text"
+            android:textSize="11sp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/saturatedFatLineChartButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_weekly_nutrition_line_chart_saturatedFatLineChartButton_text"
+            android:textSize="11sp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/carbsLineChartButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_weekly_nutrition_line_chart_carbsLineChartButton_text"
+            android:textSize="11sp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomRowButtons"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="4"
+        app:layout_constraintTop_toBottomOf="@id/topRowButtons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
+
+        <Button
+            android:id="@+id/sugarsLineChartButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_weekly_nutrition_line_chart_sugarsLineChartButton_text"
+            android:textSize="11sp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/saltLineChartButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_weekly_nutrition_line_chart_saltLineChartButton_text"
+            android:textSize="11sp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/fibreLineChartButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_weekly_nutrition_line_chart_fibreLineChartButton_text"
+            android:textSize="11sp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/proteinLineChartButton"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fragment_weekly_nutrition_line_chart_proteinLineChartButton_text"
+            android:textSize="11sp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/averageDailyIntake"
+        app:layout_constraintTop_toBottomOf="@id/bottomRowButtons"/>
+
+    <TextView
+        android:id="@+id/averageDailyIntake"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingBottom="16dp"
+        android:text="@string/fragment_weekly_nutrition_line_chart_averageDailyIntake_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

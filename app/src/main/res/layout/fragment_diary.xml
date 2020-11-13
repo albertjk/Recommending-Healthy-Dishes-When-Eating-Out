@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/diaryScreenTitle"
+            style="@style/Base.Widget.MaterialComponents.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:gravity="center"
+            android:text="@string/fragment_diary_diaryScreenTitle_text"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <ImageButton
+            android:id="@+id/rightArrowButton"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="46dp"
+            android:layout_marginEnd="18dp"
+            android:background="#ffffff"
+            android:src="@drawable/ic_arrow_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/diaryScreenTitle" />
+
+        <ImageButton
+            android:id="@+id/leftArrowButton"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="46dp"
+            android:background="#ffffff"
+            android:src="@drawable/ic_arrow_left"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/diaryScreenTitle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/selectedDateButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/fragment_diary_selectedDateButton_text"
+            android:textColor="@color/colorPrimary"
+            app:icon="@drawable/ic_calendar_primary_color_24dp"
+            app:layout_constraintEnd_toStartOf="@+id/rightArrowButton"
+            app:layout_constraintStart_toEndOf="@+id/leftArrowButton"
+            app:layout_constraintTop_toBottomOf="@+id/diaryScreenTitle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/weeklyNutritionButton"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/fragment_diary_weeklyNutritionButton_text"
+            android:tooltipText="See your weekly nutrition intake visualised on a line chart"
+            app:icon="@drawable/ic_line_chart_white_24dp"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectedDateButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dailyNutritionButton"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/fragment_diary_dailyNutritionButton_text"
+            android:tooltipText="See your daily nutrition intake visualised on a pie chart"
+            app:icon="@drawable/ic_pie_chart_white_24dp"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weeklyNutritionButton" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dailyNutritionButton"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/breakfastLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fragment_diary_breakfastLabel_text"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/breakfastDishesRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/breakfastLabel" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addBreakfastDishInDiaryButton"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/addDishNameButton_text"
+                    android:tooltipText="Add a dish for breakfast"
+                    app:icon="@drawable/ic_add"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/breakfastDishesRecyclerView" />
+
+                <TextView
+                    android:id="@+id/lunchLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/fragment_diary_lunchLabel_text"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addBreakfastDishInDiaryButton" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/lunchDishesRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lunchLabel" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addLunchDishInDiaryButton"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/addDishNameButton_text"
+                    android:tooltipText="Add a dish for lunch"
+                    app:icon="@drawable/ic_add"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lunchDishesRecyclerView" />
+
+                <TextView
+                    android:id="@+id/dinnerLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/fragment_diary_dinnerLabel_text"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/addLunchDishInDiaryButton" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/dinnerDishesRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dinnerLabel" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/addDinnerDishInDiaryButton"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/addDishNameButton_text"
+                    android:tooltipText="Add a dish for dinner"
+                    app:icon="@drawable/ic_add"
+                    android:layout_marginBottom="64dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dinnerDishesRecyclerView" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
